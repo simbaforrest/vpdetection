@@ -4,7 +4,7 @@ imshow(img);
 hold on;
 
 ngp = max(labels);
-colors = rand(ngp,3);
+colors = pseudocolor(ngp);
 
 nl = size(lines,1);
 for i=1:nl

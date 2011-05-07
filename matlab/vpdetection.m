@@ -13,9 +13,9 @@
 %   GNU General Public License for more details.
 
 function [lines,labels]=vpdetection(img)
-%	using jlinkage+lsd to group vanishing lines, did not actually detect vanishing points here
-%	but once you know the lines and labels, you can use any estimation methods you like to
-%	tackle the problem
+%	using jlinkage+lsd to group lines, did not actually detect vanishing points here
+%	but once you know the lines and labels, you can use any estimation
+%	methods you like to	tackle the problem
 %INPUT
 %	img <WxH> gray image
 %OUTPUT
