@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vpdetection", "vpdetection.vcproj", "{EDEF990E-B11A-42CF-A04C-2D8A6B47E0FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDEF990E-B11A-42CF-A04C-2D8A6B47E0FB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EDEF990E-B11A-42CF-A04C-2D8A6B47E0FB}.Debug|Win32.Build.0 = Debug|Win32
+		{EDEF990E-B11A-42CF-A04C-2D8A6B47E0FB}.Release|Win32.ActiveCfg = Release|Win32
+		{EDEF990E-B11A-42CF-A04C-2D8A6B47E0FB}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

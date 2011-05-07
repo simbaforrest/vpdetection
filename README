@@ -1,0 +1,29 @@
+				vpdetection
+	To detect vanishing point using jlinkage+lsd, or more precisely, group line segments by their
+corresponding vanishing point(vp).
+
+REFERENCE:
+Tardif J.-P., 
+Non-iterative Approach for Fast and Accurate Vanishing Point Detection, 
+12th IEEE International Conference on Computer Vision, 
+Kyoto, Japan, September 27 - October 4, 2009.
+
+INSTALL:
+
+1. Download Source
+	hg clone https://cv2cg.googlecode.com/hg/ cv2cg
+
+2. If you are using Win32+Matlab2010, all binary is within this folder, just go into the matlab folder
+and
+>run
+enjoy it!
+
+3. If you are using linux, please stay tuned, a cross-platform version will soon be avaiable.
+
+USAGE
+	see vpdetection.m
+
+2011-05-07 5:14 am	
+Chen Feng
+simbaforrest[at]gmail[dot]com
+http://www.umich.edu/~cforrest
