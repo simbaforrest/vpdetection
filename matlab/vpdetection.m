@@ -29,7 +29,7 @@ function [lines,labels]=vpdetection(img)
 %	12th IEEE International Conference on Computer Vision, 
 %	Kyoto, Japan, September 27 - October 4, 2009.
 
-addpath('..\lsd-1.5\');
+addpath('../lsd-1.5/');
 
 % get line segments from lsd
 tic
@@ -41,7 +41,11 @@ disp(['[lsd] ',num2str(t),' seconds elapsed.']);
 save('lines.tmp', 'lines', '-ascii', '-tabs');
 
 % vpdetection
+disp(['[vpdetection] begin, might take a while, please wait...']);
+tic
 [status, result] = system('vpdetection lines.tmp lines.out')
+t = toc;
+disp(['[vpdetection] end, ',num2str(t),' seconds elapsed.']);
 
 out = load('lines.out');
 lines = out(:,1:4);

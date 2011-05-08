@@ -14,6 +14,7 @@
  *
  */
 
+#include "stdio.h"
 #include "updator.h"
 #include "RandomSampler.h"
 #include "JLinkage.h"
@@ -22,6 +23,16 @@
 
 namespace VPCluster {
 	using namespace Updator;
+
+	struct LabelStat {
+		unsigned int cnt;
+		unsigned int id;
+		bool operator<(const LabelStat& rhs)
+		{
+			if(cnt!=rhs.cnt) return cnt>rhs.cnt;
+			return id>rhs.id;
+		}
+	};
 
 	/*void PrintHelp(){
 
@@ -141,15 +152,7 @@ namespace VPCluster {
 		// Write output
 		// 	plhs[0] = mxCreateDoubleMatrix(1,mDataPoints->size(), mxREAL);
 		// 	double *mTempUintPointer = (double *)mxGetPr(plhs[0]);
-		struct LabelStat {
-			unsigned int cnt;
-			unsigned int id;
-			bool operator<(const LabelStat& rhs)
-			{
-				if(cnt!=rhs.cnt) return cnt>rhs.cnt;
-				return id>rhs.id;
-			}
-		};
+
 		std::vector<LabelStat> stats;
 
 		unsigned int counterCl = 0;

@@ -11,19 +11,21 @@ Kyoto, Japan, September 27 - October 4, 2009.
 INSTALL:
 
 1. Download Source
-	hg clone https://cv2cg.googlecode.com/hg/ cv2cg
+	hg clone https://vpdetection.googlecode.com/hg/ vpdetection
 
 2. If you are using Win32+Matlab2010, all binary is within this folder, just go into the matlab folder
 and
 >run
 enjoy it!
 
-3. If you are using linux, please stay tuned, a cross-platform version will soon be avaiable.
+3. If you are using linux+Matlab, please stay in the main folder and
+>install
+enjoy it!
 
 USAGE
 	see vpdetection.m
 
-2011-05-07 5:14 am	
+2011-05-08 3:10 pm	
 Chen Feng
 simbaforrest[at]gmail[dot]com
 http://www.umich.edu/~cforrest

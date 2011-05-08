@@ -1,4 +1,5 @@
 #include "RandomSampler.h"
+#include "stdio.h" //FC
 
 // Constructor - Set functions, MSS and points. Non uniform sampling type must be set later
 RandomSampler::RandomSampler(
