@@ -11,11 +11,10 @@
 %   but WITHOUT ANY WARRANTY; without even the implied warranty of
 %   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 %   GNU General Public License for more details.
-
-function [lines,labels]=vpdetection(img)
+%USAGE
 %	using jlinkage+lsd to group lines, did not actually detect vanishing points here
 %	but once you know the lines and labels, you can use any estimation
-%	methods you like to	tackle the problem
+%	methods you like to tackle the problem
 %INPUT
 %	img <WxH> gray image
 %OUTPUT
@@ -28,6 +27,7 @@ function [lines,labels]=vpdetection(img)
 %	Non-iterative Approach for Fast and Accurate Vanishing Point Detection, 
 %	12th IEEE International Conference on Computer Vision, 
 %	Kyoto, Japan, September 27 - October 4, 2009.
+function [lines,labels]=vpdetection(img)
 
 addpath('../lsd-1.5/');
 

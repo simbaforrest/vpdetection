@@ -3,6 +3,7 @@
 #include "RandomSampler.h"
 #include "JLinkage.h"
 #include "PrimitiveFunctions.h"
+#include "../../VPPrimitive.h" //FC
 #include "mex.h"
 
 // Create the waitbar
@@ -84,12 +85,13 @@ void PrintHelp(){
 
 	PrintInMatlab("\n\n *** JLinkageRandomSamplerMex v.1.0 *** Part of the SamantHa Project");
 	PrintInMatlab("\n     Author roberto.toldo@univr.it - Vips Lab - Department of Computer Science - University of Verona(Italy)");
+	PrintInMatlab("\n     vpdetection Author Chen Feng - simbaforrest@gmail.com - University of Michigan");
 	PrintInMatlab("\n ***********************************************************************");
 	PrintInMatlab("\n Usage: [Labels] = JLnkRandomSampler(Points, NSamples, ModelType, (FirstSamplingVectorProb = []), (SamplingType = UNIFORM), (Par1), (Par2), (Par3))");
 	PrintInMatlab("\n Input:");
 	PrintInMatlab("\n        Points - Input dataset (Dimension x NumberOfPoints)");
 	PrintInMatlab("\n        NSamples - Number of desired samples");
-	PrintInMatlab("\n        ModelType - type of models extracted. Currently the model supported are: 0 - Planes 1 - 2dLines");
+	PrintInMatlab("\n        ModelType - type of models extracted. Currently the model supported are: 0 - Planes 1 - 2dLines 2 - Vanishing Points");
 	PrintInMatlab("\n        FirstSamplingVectorProb(facultative) - Associate to each point a (non-uniform) probability to be randomly picked (leave [] to set a uniform probability for each point)");
 	PrintInMatlab("\n        SamplingType(facultative) - Non first sampling strategy: 0 - Uniform(default) 1 - Exp 2 - Kd-Tree 3 - Memory Efficient Kd-Tree(Slower)");
 	PrintInMatlab("\n        Par1(facultative) - Sigma Exp(default = 1.0) or Neighbor search for Kd-Tree (default = 10)");
@@ -105,6 +107,7 @@ void PrintHelp(){
 enum MODELTYPE{
 	MT_PLANE,
 	MT_LINE,
+	MT_VP, //FC
 	MT_SIZE
 };
 
@@ -167,6 +170,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
 	switch(mModelType){
 		case MT_PLANE: mMSS = 3; break;
 		case MT_LINE: mMSS = 2; break;
+		case MT_VP: mMSS = 2; break; //FC
 		default: mexErrMsgTxt("Invalid model type"); break;
 	}
 
@@ -248,6 +252,11 @@ void mexFunction( int nlhs, mxArray *plhs[],
 	if(mModelType == MT_LINE){
 		mGetFunction = GetFunction_Line;
 		mDistanceFunction = DistanceFunction_Line;
+	}
+	//FC
+	if(mModelType == MT_VP){
+		mGetFunction = GetFunction_VP;
+		mDistanceFunction = DistanceFunction_VP;
 	}
 
 	
